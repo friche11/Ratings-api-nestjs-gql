@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ratings-api
+    runtime: node
+    buildCommand: yarn
+    startCommand: yarn start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_TOKEN
+        generateValue: true
