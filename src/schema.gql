@@ -114,6 +114,7 @@ type Mutation {
   login(data: LoginInput!): LoginOutput!
   createAdmin(createAdminInput: CreateAdminInput!): Admin!
   loginAsAdmin(data: CreateAdminInput!): LoginOutput!
+  resetDatabase: Boolean!
   createRestaurant(createRestaurantInput: CreateRestaurantInput!): Restaurant!
   updateRestaurant(updateRestaurantInput: UpdateRestaurantInput!): Restaurant!
   removeRestaurant(id: Int!): Boolean!

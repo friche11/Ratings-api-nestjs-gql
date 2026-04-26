@@ -19,4 +19,8 @@ export class AdminResolver {
   async loginAsAdmin(@Args('data') loginInput: CreateAdminInput) {
     return this.authService.validateAdmin(loginInput)
   }
+  @Mutation(() => Boolean)
+  async resetDatabase() {
+    return this.adminService.resetDatabase()
+  }
 }
