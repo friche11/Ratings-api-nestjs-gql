@@ -10,9 +10,11 @@ import { AdminModule } from '../admin/admin.module'
   imports: [
     forwardRef(() => UserModule),
     AdminModule,
-    JwtModule.register({
-      secret: process.env.JWT_TOKEN,
-      //signOptions: { expiresIn: '60s' },
+    JwtModule.registerAsync({
+      useFactory: () => ({
+        secret: process.env.JWT_TOKEN,
+        //signOptions: { expiresIn: '60s' },
+      }),
     }),
   ],
   providers: [AuthService, GqlAuthGuard],

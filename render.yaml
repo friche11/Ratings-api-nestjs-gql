@@ -1,11 +1,13 @@
 services:
   - type: web
-    name: ratings-api
+    name: ratings-api-nestjs-gql
     runtime: node
-    buildCommand: yarn
+    buildCommand: yarn && yarn build
     startCommand: yarn start:prod
     envVars:
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: 3000
       - key: JWT_TOKEN
         generateValue: true
